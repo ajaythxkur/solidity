@@ -17,4 +17,14 @@ contract map{
         s1[0]="Nugggu"; //value changes in student array
     }
     //mapping in structure
+    struct std{
+        string name;
+        uint class;
+    }
+    mapping(uint=>std) public data;
+    function setStd(uint id, uint _class, string memory _name) public{
+        data[id] = std(_name, _class);
+    }
+    //keys cannot be of types mapping, dynamic arr, enum, struct
+    //mapping always stored in contract storage
 }
